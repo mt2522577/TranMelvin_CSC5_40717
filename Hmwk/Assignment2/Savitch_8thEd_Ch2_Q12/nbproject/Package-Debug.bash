@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dylib
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/helloworld
-OUTPUT_BASENAME=helloworld
-PACKAGE_TOP_DIR=helloworld/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/savitch_8thed_ch2_q12
+OUTPUT_BASENAME=savitch_8thed_ch2_q12
+PACKAGE_TOP_DIR=savitch8thedch2q12/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/helloworld/bin"
+makeDirectory "${NBTMPDIR}/savitch8thedch2q12/bin"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/helloworld.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/savitch8thedch2q12.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/helloworld.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/savitch8thedch2q12.tar *
 checkReturnCode
 
 # Cleanup

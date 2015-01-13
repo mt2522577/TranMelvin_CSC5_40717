@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=helloworld
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/helloworld
+CND_ARTIFACT_NAME_Debug=truthtable
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/truthtable
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=helloworld.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/helloworld.tar
+CND_PACKAGE_NAME_Debug=truthtable.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/truthtable.tar
 # Release configuration
-CND_PLATFORM_Release=Cygwin_4.x-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=helloworld
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/helloworld
-CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=helloworld.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/helloworld.tar
+CND_PLATFORM_Release=GNU-MacOSX
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
+CND_ARTIFACT_NAME_Release=truthtable
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/truthtable
+CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
+CND_PACKAGE_NAME_Release=truthtable.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/truthtable.tar
 #
 # include compiler specific variables
 #

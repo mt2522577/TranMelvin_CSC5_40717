@@ -1,9 +1,8 @@
 /* 
    File:   main.cpp
-   Author: Dr. Mark E. Lehr
+   Author: Melvin Tran
    Created on January 6, 2015, 6:05 PM
    Purpose: Our first program
-            I am up at Github now!!!!
  */
 
 //System Libraries

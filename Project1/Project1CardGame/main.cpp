@@ -108,7 +108,7 @@ int main(int argc, char** argv) {
                         cout<<"Hit 3: "<<hit3<<endl;
                         tot=hit+hit2+hit3+comb;
                         cout<<hit+comb<<endl;}   
-                    else if (comb<=16||comb>=7){
+                    else if (comb<=15||comb>=7){
                             cout<<"Dealers New hand"<<endl;
                             cout<<"Hit 1: "<<hit<<endl;
                             cout<<"Hit 2: "<<hit2<<endl;
@@ -133,10 +133,18 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     cout<<"You Won!!!!!!"<<endl;
                     cout<<"Please reset the game."<<endl;  
-                } while(tot>=21){
-                    cout<<"End of game"<<endl;}
-                    cout<<"would you like to continue?"<<endl;
-                            cin>>yes;
+                } if (tot>=ptot2){
+                    cout<<"Dealer WON"<<endl;
+                }else
+                    cout<<"You WON!!!"<<endl;
+                
+                
+                
+                while(tot>=21){
+                    cout<<"End of game"<<endl;
+                    cout<<"Please reset the game."<<endl;
+                    char yes;
+                    cin>>yes;}
                 } while(yes!='y'||yes!='Y');
                 break;}   
              cout<<endl;

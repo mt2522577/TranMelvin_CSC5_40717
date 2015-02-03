@@ -29,10 +29,6 @@ int main(int argc, char** argv) {
         <<"If not press any key!"<<endl;
     //Declare variables
     cin>>choice; //User input
-    do{
-    cout<<"Wrong input!";
-    }while(choice!=1);
-  
     switch (choice){ //Open the game in a switch case
         case 1:{
             cout<<"Lets play a game!"<<endl
@@ -83,6 +79,7 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     cout<<endl;
                     cout<<endl;
+            //Didn't use a break so it runs all the way through
         case 2:
                 //do{ //Do while loop to play the game again
                 //Random number generator
@@ -137,9 +134,6 @@ int main(int argc, char** argv) {
                     cout<<"Dealer WON"<<endl;
                 }else
                     cout<<"You WON!!!"<<endl;
-                
-                
-                
                 while(tot>=21){
                     cout<<"End of game"<<endl;
                     cout<<"Please reset the game."<<endl;

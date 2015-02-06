@@ -1,12 +1,12 @@
 /* 
  * File:   main.cpp
- * Author: melvintran
- *
- * Created on February 2, 2015, 11:02 AM
+ * Author: Melvin Tran
+ * Created on February 4, 2015, 8:18 AM
  */
 //System Libraries
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 //User Libraries
@@ -16,14 +16,15 @@ using namespace std;
 //Function prototypes
 void filAray(int [],int);
 void prntAry(const int [],int,int);
-int  lSearch(int,const int [],int,int);
-int  bSearch(int &,const int [],int &,int);
-int  fndVals(int [],int,int,int[]);
-void prntFnd(const int [],int,int);
-int  cntFnd(const int [],int,int);
+int  lSearch(int,const int [],int,int);//Linear Search
+int  fndVals(int [],int,int,int[]);//Fill Array with all value positions found
+void prntFnd(const int [],int,int);//Print the found array
+int  cntFnd(const int [],int,int);//Count the number of values found in the array
 
 //Execution Begins Here
 int main(int argc, char** argv) {
+    //Seed the random number generator
+    srand(static_cast<unsigned int>(time(0)));
     //Declare variables and arrays
     const int ROW=1000;
     int pFilRow=100,perLine=10;
@@ -34,7 +35,7 @@ int main(int argc, char** argv) {
     //Print the Arrays
     prntAry(array,pFilRow,perLine);
     //Find all the values
-    int val=9;
+    int val=50;
     cout<<"Where is "<<val<<" found in the array!"<<endl;
     int nTimes=fndVals(array,pFilRow,val,found);
     //Print all the values found
@@ -50,13 +51,11 @@ int fndVals(int a[],int n,int val,int f[]){
     //Loop until you find all the elements
     //in the array
     int indx,pos=0,count=0;
-    bSearch(pos,a,n,val);
     do{
         indx=lSearch(pos,a,n,val);
         f[count++]=indx;
         pos=indx+1;
     }while(indx>=0&&indx<n);
-    //if(f[count-1]!=-1)f[count]=-1;
     return --count;
 }
 
@@ -64,27 +63,12 @@ int  cntFnd(const int a[],int n,int val){
     //Loop until you find all the elements
     //in the array
     int indx,pos=0,count=0;
-    bSearch(pos,a,n,val);
     do{
         indx=lSearch(pos,a,n,val);
         pos=indx+1;
         count++;
     }while(indx>=0&&indx<n);
     return --count;
-}
-
-int  bSearch(int &strt,const int a[],int &end,int val){
-    int middle;
-    do{
-        middle=(end+strt)/2;
-        if(a[middle]==val)return middle;
-        else if(a[middle]>val){
-            end=middle-1;
-        }else{
-            strt=middle+1;
-        }
-    }while(strt<=end);
-    return -1;
 }
 
 int  lSearch(int posStrt,const int a[],int n,int val){
@@ -125,12 +109,9 @@ void prntAry(const int a[],int n,int perLine){
     cout<<endl;
 }
 
-//Fill an array sequentially which makes it sorted
-//but with lots of similar values
+//Randomly fill the array with 2-digit numbers
 void filAray(int a[],int n){
-    //for 3 of the same of values
-    int div=10;
     for(int i=0;i<n;i++){
-        a[i]=i/div;
+        a[i]=rand()%90+10;
     }
 }

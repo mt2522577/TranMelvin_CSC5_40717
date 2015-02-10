@@ -21,7 +21,7 @@ using namespace std;
 //Didn't work when it was in the main
 int card1,card2,card3,card4,cardtot,dcrd1,dcrd2,dcrd3,dcrd4;
 char choice;
-void clearScreen() // used to clear the screen after the game
+void clearScreen() //Used to clear the screen after the game
 {
     for(int i =0; i <50; i++)
     {
@@ -68,6 +68,7 @@ int main(int argc, char** argv) {
     cin.get();
     cout<<endl;
     cout<<endl;
+    do{
     dCards();
     cout<<"Card 1: "<<card1<<endl
         <<"Card 2: "<<card2<<endl;
@@ -75,8 +76,9 @@ int main(int argc, char** argv) {
     cout<<"Your card total is "<<cardtot<<endl;
     cout<<"Do you want to hit or stay?"<<endl;
     cin>>choice;
-    cout<<endl;
-    if (choice=='h'||choice=='H'){
+    if(choice=='s'||choice=='S'){
+        dealrT();
+    }if (choice=='h'||choice=='H'){
                 delCrd3();
                  cout<<"Card 1 : "<<card1<<endl;
     cout<<"Card 2 : "<<card2<<endl;
@@ -86,10 +88,6 @@ int main(int argc, char** argv) {
     }
     cout<<"Do you want to hit or stay?"<<endl;
     cin>>choice;
-    cout<<endl;
-    if(choice=='s'||choice=='S'){
-        dealrT();
-    }
     if (choice=='h'||choice=='H'){
                 delCrd4();
     cout<<"Card 1 : "<<card1<<endl;
@@ -102,13 +100,65 @@ int main(int argc, char** argv) {
     if(choice=='s'||choice=='S'){
                 dealrT();
     }
-    
             if(cardtot>21){
-                cout<<"You Bust!!! Try your luck next time!";
+                cout<<"You Bust!!! Try your luck next time!"<<endl;
             }
             if(cardtot==21){
                 cout<<"You Win!!!!"<<endl;
             }
+    dealrT();
+    cout<<"Dealer Hands"<<endl;
+    if(cardtot<=8&&cardtot>=2){
+        cout<<"testing"<<endl;
+        cout<<"Card 1: "<<dcrd1<<endl
+            <<"Card 2: "<<dcrd2<<endl;
+        cout<<"Card total : "<<dcrd1+dcrd2<<endl;
+    }  
+    else if(cardtot<=14&&cardtot>=9){
+            cout<<"testing 2"<<endl;
+            cout<<"Card 1: "<<dcrd1<<endl
+                <<"Card 2: "<<dcrd2<<endl
+                <<"Card 3: "<<dcrd3<<endl;
+            cout<<"Card total : "<<dcrd1+dcrd2+dcrd3<<endl;
+        }
+    else if(cardtot<=20&&cardtot>=15){
+                cout<<"testing 3"<<endl;
+                cout<<"Card 1: "<<dcrd1<<endl
+                <<"Card 2: "<<dcrd2<<endl
+                <<"Card 3: "<<dcrd3<<endl
+                <<"Card 4: "<<dcrd4<<endl;
+                cout<<"Card total : "<<dcrd1+dcrd2+dcrd3+dcrd4
+                   <<endl;
+    }
+    if(dcrd1+dcrd2>21&&dcrd1+dcrd2+dcrd3>21&&dcrd1+dcrd2+dcrd3+dcrd4>21){
+                cout<<"Dealer Bust!!! You Win!"<<endl;
+            }
+            if(dcrd1+dcrd2==21&&dcrd1+dcrd2+dcrd3==21&&
+                    dcrd1+dcrd2+dcrd3+dcrd4==21){
+                cout<<"Dealer Win!!!!"<<endl;
+            }
+    if(cardtot==dcrd1+dcrd2&&cardtot==dcrd1+dcrd2+dcrd3
+            &&cardtot==dcrd1+dcrd2+dcrd3+dcrd4){
+        cout<<"It's a draw!!!"<<endl;
+        cout<<"Do you want to run again?"<<endl;
+        cin>>choice;
+        clearScreen();
+    }else if(cardtot<dcrd1+dcrd2&&cardtot<dcrd1+dcrd2+dcrd3
+            &&cardtot<dcrd1+dcrd2+dcrd3+dcrd4){
+        cout<<"You Lose!!! Better luck next time!"<<endl;
+        clearScreen();
+    }else if(cardtot>dcrd1+dcrd2&&cardtot>dcrd1+dcrd2+dcrd3
+            &&cardtot>dcrd1+dcrd2+dcrd3+dcrd4){
+        cout<<"You Beat the odds!!! congratulations you win!!!"<<endl;
+        clearScreen();
+    }
+    else
+        cout<<"Do you want to run again?"<<endl;
+        cin>>choice;
+        clearScreen();
+    }while(choice=='y'||choice=='Y');           
+        
+    
     return 0;
 }
 void dCards(){
